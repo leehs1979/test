@@ -1,10 +1,20 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'pipeline-build'
+    }
+
+  }
   stages {
-    stage('message') {
-      agent any
+    stage('ToOCP') {
+      agent {
+        node {
+          label 'pipeline-build'
+        }
+
+      }
       steps {
-        echo 'Start Pipeline'
+        echo 'OCP'
       }
     }
   }
